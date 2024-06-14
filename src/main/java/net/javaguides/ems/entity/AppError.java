@@ -11,4 +11,5 @@ public class AppError {
     private String errorCode;
     private String message;
     private HttpStatus httpStatus;
+    private int statusCode;
 }
