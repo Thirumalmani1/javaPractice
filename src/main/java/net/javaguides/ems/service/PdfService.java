@@ -1,7 +1,7 @@
 package net.javaguides.ems.service;
 
 
-import net.javaguides.ems.model.User;
+import net.javaguides.ems.model.Users;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 public class PdfService {
-    public void createPdf(String destination, List<User> users) {
+    public void createPdf(String destination, List<Users> users) {
         try {
             PdfWriter writer = new PdfWriter(destination);
             com.itextpdf.kernel.pdf.PdfDocument pdfDoc = new com.itextpdf.kernel.pdf.PdfDocument(writer);
@@ -20,7 +20,7 @@ public class PdfService {
 
             document.add(new Paragraph("User Details"));
 
-            for (User user : users) {
+            for (Users user : users) {
                 document.add(new Paragraph("Name: " + user.getName()));
                 document.add(new Paragraph("Age: " + user.getAge()));
                 document.add(new Paragraph("Email: " + user.getEmail()));

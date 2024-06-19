@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class User {
+public class Users {
     private String name;
     private int age;
     private String email;
