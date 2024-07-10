@@ -14,6 +14,7 @@ import lombok.Setter;
 
 
 @Entity
+@EntityListeners(AuditTrailListener.class)
 @Table(name = "users",
         uniqueConstraints = {
         @UniqueConstraint(columnNames = "username"),
