@@ -36,4 +36,15 @@ public class ResourceExceptionHandler {
         );
         return new ResponseEntity<>(appError,HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<AppError> handleException(Exception exception) {
+        AppError appError = new AppError(
+                UUID.randomUUID().toString(),
+                exception.getMessage(),
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                HttpStatus.INTERNAL_SERVER_ERROR.value()
+        );
+        return new ResponseEntity<>(appError,HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
